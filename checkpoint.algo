@@ -1,0 +1,26 @@
+ALGORITHM calc_phrase
+VAR
+    c : CHAR;
+    phrase : STRING;
+    nbre_caract : INTEGER := 0;
+    nbre_mots : INTEGER := 1;
+    nbre_voyelles : INTEGER := 0;
+
+BEGIN
+   WRITE ( 'Donner une phrase qui se termine par un point');
+   READ ('phrase') 
+
+   WHILE (c <> '.') DO
+    READ (c)
+       nbre_caract :=  nbre_caract +1 ;
+       WRITE ('la phrase contient :',nbre_caract,'caractères');
+       IF (c = ' ') THEN
+           nbre_mots := nbre_mots + 1 ;
+           WRITE('le nombre de mots dans cette phrase est: ',nbre_mots);
+       END_IF
+       IF (c = 'a' OR c = 'e' OR c = 'i' OR c = 'o' OR c = 'u' OR c = 'y') THEN
+        nbre_voyelles := nbre_voyelles + 1 ;
+        WRITE (' le nombre de voyelle dans cette phrase est : ', nbre_voyelles);
+       END_IF
+   END_WHILE
+END
